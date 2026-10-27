@@ -1,0 +1,9 @@
+# Notes de travail locales
+notes/
+
+# Systèmes et éditeurs
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/

@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="fr" data-title-fr="Portail cabinet comptable · Samet Bucak" data-title-en="Accounting firm portal · Samet Bucak">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; media-src 'self'; style-src 'self'; script-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>Portail cabinet comptable · Samet Bucak</title>
+  <meta name="description" content="Conception d'un portail client multi-entreprises pour un cabinet comptable : cloisonnement vérifié côté serveur, droits par rôle, banque sans identifiants.">
+  <link rel="canonical" href="https://sametdu60.github.io/projet-cabinet.html">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/boot.js"></script>
+  <script src="js/site.js" defer></script>
+  <script src="js/review.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#contenu"><span lang="fr">Aller au contenu</span><span lang="en">Skip to content</span></a>
+  <svg hidden aria-hidden="true">
+    <symbol id="i-moon" viewBox="0 0 24 24"><path fill="currentColor" d="M12 3a9 9 0 1 0 9 9 7 7 0 0 1-9-9Z"/></symbol>
+  </svg>
+
+  <header class="header">
+    <div class="header__inner">
+      <a class="logo" href="index.html"><span class="logo__mark">SB</span><span>Samet Bucak</span></a>
+      <nav class="menu" aria-label="Navigation">
+        <a href="parcours.html"><span lang="fr">Parcours</span><span lang="en">Background</span></a>
+        <a href="competences.html"><span lang="fr">Compétences</span><span lang="en">Skills</span></a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+      <div class="toggles">
+        <button class="toggle" type="button" data-toggle-lang data-label-fr="Switch to English" data-label-en="Passer en français"><span lang="fr">EN</span><span lang="en">FR</span></button>
+        <button class="toggle" type="button" data-toggle-theme data-label-fr="Changer de thème" data-label-en="Toggle theme"><svg aria-hidden="true"><use href="#i-moon"/></svg></button>
+      </div>
+    </div>
+  </header>
+
+  <main class="page" id="contenu">
+    <a class="back" href="index.html">← <span lang="fr">Accueil</span><span lang="en">Home</span></a>
+
+    <section class="page-hero">
+      <span class="pill pill--live"><span lang="fr">Conception · 2026</span><span lang="en">Design · 2026</span></span>
+      <h1><span lang="fr">Un client ne doit jamais voir les dossiers d'un autre</span><span lang="en">A client must never see another client's files</span></h1>
+      <p class="lead"><span lang="fr">Un cabinet comptable gère les factures, les relevés bancaires et la TVA de dizaines d'entreprises. Une seule fuite entre deux dossiers, et la confiance disparaît. J'ai conçu son portail client en partant de cette règle.</span><span lang="en">An accounting firm handles invoices, bank statements and VAT for dozens of companies. A single leak between two files and trust is gone. I designed its client portal starting from that rule.</span></p>
+    </section>
+
+    <dl class="sheet reveal">
+      <div><dt><span lang="fr">Mon rôle</span><span lang="en">My role</span></dt><dd><span lang="fr">Cahier des charges et prototype d'interface</span><span lang="en">Specification and UI prototype</span></dd></div>
+      <div><dt><span lang="fr">Espaces</span><span lang="en">Areas</span></dt><dd><span lang="fr">Site vitrine, espace client, back-office</span><span lang="en">Public site, client area, back office</span></dd></div>
+      <div><dt><span lang="fr">Sujets</span><span lang="en">Topics</span></dt><dd><span lang="fr">Multi-clients, droits, RGPD</span><span lang="en">Multi-tenancy, permissions, GDPR</span></dd></div>
+      <div><dt><span lang="fr">Statut</span><span lang="en">Status</span></dt><dd><span lang="fr">Conception, version 6 du cahier des charges</span><span lang="en">Design, version 6 of the specification</span></dd></div>
+    </dl>
+
+    <section class="block reveal">
+      <span class="label"><span lang="fr">La réponse</span><span lang="en">The answer</span></span>
+      <h2><span lang="fr">Le cloisonnement se joue sur le serveur, pas à l'écran</span><span lang="en">Isolation lives on the server, not on the screen</span></h2>
+      <div class="answer">
+        <span class="label"><span lang="fr">En une phrase</span><span lang="en">In one sentence</span></span>
+        <p><span lang="fr">À chaque requête, le serveur vérifie qui demande, à quelles entreprises cette personne a droit, et si le dossier demandé en fait partie. Sinon : refus, et une trace.</span><span lang="en">On every request, the server checks who is asking, which companies that person may access, and whether the requested file belongs to one of them. Otherwise: refused, and logged.</span></p>
+      </div>
+      <ol class="pipeline pipeline--4">
+        <li><h3><span lang="fr">Qui es-tu ?</span><span lang="en">Who are you?</span></h3><p><span lang="fr">Compte nominatif, protection contre les tentatives répétées, MFA possible.</span><span lang="en">Named account, protection against repeated attempts, optional MFA.</span></p></li>
+        <li><h3><span lang="fr">À quoi as-tu droit ?</span><span lang="en">What may you access?</span></h3><p><span lang="fr">Un rôle, et la liste explicite des entreprises autorisées.</span><span lang="en">A role, and the explicit list of allowed companies.</span></p></li>
+        <li><h3><span lang="fr">Ce dossier en fait-il partie ?</span><span lang="en">Is this file one of them?</span></h3><p><span lang="fr">Vérifié côté serveur, même si l'URL a été modifiée à la main.</span><span lang="en">Checked server side, even if the URL was edited by hand.</span></p></li>
+        <li><h3><span lang="fr">Tracer</span><span lang="en">Log it</span></h3><p><span lang="fr">Qui, quand, quel dossier, quel résultat.</span><span lang="en">Who, when, which file, what outcome.</span></p></li>
+      </ol>
+    </section>
+
+    <section class="block reveal">
+      <span class="label"><span lang="fr">Trois profils</span><span lang="en">Three profiles</span></span>
+      <h2><span lang="fr">Chacun voit ce qu'il doit voir, rien de plus</span><span lang="en">Everyone sees what they need, nothing more</span></h2>
+      <div class="table-wrap">
+        <table class="matrix">
+          <thead>
+            <tr>
+              <th scope="col"><span lang="fr">Profil</span><span lang="en">Profile</span></th>
+              <th scope="col"><span lang="fr">Voit</span><span lang="en">Sees</span></th>
+              <th scope="col"><span lang="fr">Peut</span><span lang="en">Can</span></th>
+              <th scope="col"><span lang="fr">Ne peut jamais</span><span lang="en">Can never</span></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Client</td>
+              <td><span lang="fr">Sa seule entreprise</span><span lang="en">Their own company only</span></td>
+              <td><span lang="fr">Déposer des pièces, connecter sa banque, poser une question</span><span lang="en">Upload documents, connect their bank, ask a question</span></td>
+              <td><span lang="fr">Ouvrir le dossier d'un autre, même en modifiant l'URL</span><span lang="en">Open another file, even by editing the URL</span></td>
+            </tr>
+            <tr>
+              <td><span lang="fr">Collaborateur</span><span lang="en">Staff member</span></td>
+              <td><span lang="fr">Les dossiers qui lui sont attribués</span><span lang="en">The files assigned to them</span></td>
+              <td><span lang="fr">Traiter pièces, TVA ou clôture selon son rôle</span><span lang="en">Handle documents, VAT or closing according to their role</span></td>
+              <td><span lang="fr">S'attribuer lui-même des droits</span><span lang="en">Grant themselves more rights</span></td>
+            </tr>
+            <tr>
+              <td><span lang="fr">Administrateur</span><span lang="en">Administrator</span></td>
+              <td><span lang="fr">Tout le portefeuille</span><span lang="en">The whole portfolio</span></td>
+              <td><span lang="fr">Créer les comptes, attribuer et révoquer les droits</span><span lang="en">Create accounts, grant and revoke rights</span></td>
+              <td><span lang="fr">Changer un droit sans que ce soit journalisé</span><span lang="en">Change a permission without it being logged</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="block reveal">
+      <span class="label"><span lang="fr">Données bancaires</span><span lang="en">Bank data</span></span>
+      <h2><span lang="fr">La banque, sans jamais toucher un mot de passe</span><span lang="en">Banking, without ever touching a password</span></h2>
+      <p><span lang="fr">Le client connecte sa banque via un prestataire d'agrégation agréé : il donne son consentement chez ce prestataire, et le portail <strong>ne voit jamais ses identifiants</strong>. Il peut aussi importer un relevé PDF. Les opérations en double entre les deux sources sont détectées avant le rapprochement.</span><span lang="en">The client connects their bank through a licensed aggregation provider: consent is given on the provider's side, and the portal <strong>never sees their credentials</strong>. They can also import a PDF statement. Duplicate transactions across both sources are caught before reconciliation.</span></p>
+    </section>
+
+    <section class="block reveal">
+      <span class="label"><span lang="fr">Automatisation</span><span lang="en">Automation</span></span>
+      <h2><span lang="fr">La machine propose, l'humain valide</span><span lang="en">The machine suggests, a human approves</span></h2>
+      <p><span lang="fr">La lecture automatique des factures propose les écritures, vérifie que HT et TVA font bien le TTC et repère les doublons. Mais rien n'est comptabilisé sans la validation d'une personne habilitée, et chaque correction reste dans l'historique.</span><span lang="en">Automatic invoice reading suggests entries, checks that net plus VAT equals gross and flags duplicates. But nothing is booked without approval from an authorised person, and every correction stays in the history.</span></p>
+    </section>
+
+    <section class="block reveal">
+      <span class="label"><span lang="fr">Ce que j'en retiens</span><span lang="en">What I take from it</span></span>
+      <h2><span lang="fr">Une règle que je n'oublierai pas</span><span lang="en">A rule I won't forget</span></h2>
+      <p class="quote"><span lang="fr">Masquer un bouton n'est pas un contrôle d'accès.</span><span lang="en">Hiding a button is not access control.</span></p>
+      <p><span lang="fr">C'est l'erreur la plus fréquente des applications multi-clients, et l'une des plus coûteuses. Ici, elle est écrite noir sur blanc dans les critères d'acceptation : un client ne voit que son entreprise, et c'est le serveur qui le garantit.</span><span lang="en">It is the most common mistake in multi-tenant applications, and one of the most expensive. Here it is written into the acceptance criteria: a client only sees their own company, and the server guarantees it.</span></p>
+    </section>
+
+    <a class="next" href="projet-detection.html">
+      <span><span class="label"><span lang="fr">Projet suivant</span><span lang="en">Next project</span></span><strong><span lang="fr">Repérer un attaquant qui ne déclenche aucune alarme</span><span lang="en">Catching an attacker who triggers no alarm</span></strong></span>
+      <span class="next__arrow" aria-hidden="true">→</span>
+    </a>
+    <div class="end-cta">
+      <p><span lang="fr">Envie d'en parler ?</span><span lang="en">Want to talk about it?</span></p>
+      <a class="btn btn--accent btn--small" href="index.html#contact"><span lang="fr">Me contacter</span><span lang="en">Get in touch</span></a>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <p>© <span id="year">2026</span> Samet Bucak</p>
+    <p><a href="index.html"><span lang="fr">Retour à l'accueil</span><span lang="en">Back to home</span></a></p>
+  </footer>
+</body>
+</html>

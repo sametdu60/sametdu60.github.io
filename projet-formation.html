@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="fr" data-title-fr="Plateforme de formation · Samet Bucak" data-title-en="Training platform · Samet Bucak">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; media-src 'self'; style-src 'self'; script-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>Plateforme de formation · Samet Bucak</title>
+  <meta name="description" content="Un logiciel métier pour un organisme de formation, exposé à Internet sans aucun port entrant.">
+  <link rel="canonical" href="https://sametdu60.github.io/projet-formation.html">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/boot.js"></script>
+  <script src="js/site.js" defer></script>
+  <script src="js/review.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#contenu"><span lang="fr">Aller au contenu</span><span lang="en">Skip to content</span></a>
+  <svg hidden aria-hidden="true">
+    <symbol id="i-moon" viewBox="0 0 24 24"><path fill="currentColor" d="M12 3a9 9 0 1 0 9 9 7 7 0 0 1-9-9Z"/></symbol>
+  </svg>
+
+  <header class="header">
+    <div class="header__inner">
+      <a class="logo" href="index.html"><span class="logo__mark">SB</span><span>Samet Bucak</span></a>
+      <nav class="menu" aria-label="Navigation">
+        <a href="parcours.html"><span lang="fr">Parcours</span><span lang="en">Background</span></a>
+        <a href="competences.html"><span lang="fr">Compétences</span><span lang="en">Skills</span></a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+      <div class="toggles">
+        <button class="toggle" type="button" data-toggle-lang data-label-fr="Switch to English" data-label-en="Passer en français"><span lang="fr">EN</span><span lang="en">FR</span></button>
+        <button class="toggle" type="button" data-toggle-theme data-label-fr="Changer de thème" data-label-en="Toggle theme"><svg aria-hidden="true"><use href="#i-moon"/></svg></button>
+      </div>
+    </div>
+  </header>
+
+  <main class="page" id="contenu">
+    <a class="back" href="index.html">← <span lang="fr">Accueil</span><span lang="en">Home</span></a>
+
+    <section class="page-hero">
+      <span class="pill pill--done"><span lang="fr">Logiciel métier · 2026</span><span lang="en">Business software · 2026</span></span>
+      <h1><span lang="fr">Quinze formulaires papier, remplacés par un seul logiciel</span><span lang="en">Fifteen paper forms, replaced by one piece of software</span></h1>
+      <p class="lead"><span lang="fr">Pour chaque stagiaire, cet organisme de formation remplissait une quinzaine de documents à la main, en ressaisissant partout les mêmes informations. Et ses contrôles qualité exigent des preuves. J'ai conçu et développé l'outil qui remplace tout ça, avec une contrainte forte : les données ne quittent pas ses locaux.</span><span lang="en">For every trainee, this training provider filled in about fifteen documents by hand, retyping the same information everywhere. And its quality audits demand evidence. I designed and built the tool that replaces all of it, under one strong constraint: the data never leaves its premises.</span></p>
+    </section>
+
+    <dl class="sheet reveal">
+      <div><dt><span lang="fr">Mon rôle</span><span lang="en">My role</span></dt><dd><span lang="fr">Cahier des charges, développement, exploitation</span><span lang="en">Specification, development, operations</span></dd></div>
+      <div><dt><span lang="fr">Utilisateurs</span><span lang="en">Users</span></dt><dd><span lang="fr">L'équipe, les stagiaires, les formateurs</span><span lang="en">Staff, trainees, trainers</span></dd></div>
+      <div><dt>Stack</dt><dd>Docker · PostgreSQL · CI</dd></div>
+      <div><dt><span lang="fr">Statut</span><span lang="en">Status</span></dt><dd><span lang="fr">Développé et testé, mise en production en préparation</span><span lang="en">Built and tested, go-live in preparation</span></dd></div>
+    </dl>
+
+    <ul class="stats reveal">
+      <li><strong>15 → 1</strong><span><span lang="fr">saisie unique au lieu de quinze documents</span><span lang="en">single entry instead of fifteen documents</span></span></li>
+      <li><strong>13</strong><span><span lang="fr">itérations livrées et testées</span><span lang="en">iterations shipped and tested</span></span></li>
+      <li><strong>0</strong><span><span lang="fr">port entrant ouvert sur Internet</span><span lang="en">inbound port open to the Internet</span></span></li>
+    </ul>
+
+    <section class="block reveal">
+      <span class="label"><span lang="fr">Ce que fait l'outil</span><span lang="en">What the tool does</span></span>
+      <h2><span lang="fr">Tout le parcours d'un stagiaire, de l'inscription à l'attestation</span><span lang="en">A trainee's whole journey, from enrolment to certificate</span></h2>
+      <div class="cards">
+        <div class="card"><h3><span lang="fr">Inscriptions sur invitation</span><span lang="en">Invitation-only enrolment</span></h3><p><span lang="fr">Lien à usage unique, validation humaine, détection des homonymes.</span><span lang="en">Single-use link, human validation, duplicate detection.</span></p></div>
+        <div class="card"><h3><span lang="fr">Calendrier et formateurs</span><span lang="en">Calendar and trainers</span></h3><p><span lang="fr">Planning partagé, conflits signalés si un formateur est déjà pris.</span><span lang="en">Shared schedule, conflicts flagged when a trainer is already booked.</span></p></div>
+        <div class="card"><h3><span lang="fr">Émargement par QR code</span><span lang="en">QR code attendance</span></h3><p><span lang="fr">Signature à l'écran, heures calculées automatiquement.</span><span lang="en">On-screen signature, hours calculated automatically.</span></p></div>
+        <div class="card"><h3><span lang="fr">Documents en un clic</span><span lang="en">Documents in one click</span></h3><p><span lang="fr">Convocations, attestations, conventions, exports groupés.</span><span lang="en">Notices, certificates, agreements, bulk exports.</span></p></div>
+        <div class="card"><h3><span lang="fr">Devis et facturation</span><span lang="en">Quotes and invoicing</span></h3><p><span lang="fr">Numérotation sans trou, avoirs, export pour le comptable.</span><span lang="en">Gapless numbering, credit notes, accountant export.</span></p></div>
+        <div class="card"><h3><span lang="fr">Conformité calculée</span><span lang="en">Computed compliance</span></h3><p><span lang="fr">Checklist de contrôle remplie toute seule, bilan annuel préparé.</span><span lang="en">Audit checklist filled automatically, yearly report prepared.</span></p></div>
+      </div>
+    </section>
+
+    <section class="block reveal">
+      <span class="label"><span lang="fr">La réponse</span><span lang="en">The answer</span></span>
+      <h2><span lang="fr">Ouvrir à Internet sans ouvrir un seul port</span><span lang="en">Online without opening a single port</span></h2>
+      <div class="answer">
+        <span class="label"><span lang="fr">En une phrase</span><span lang="en">In one sentence</span></span>
+        <p><span lang="fr">Le serveur ne reçoit jamais de connexion venue d'Internet : c'est lui qui appelle, par un tunnel sortant et chiffré, un relais public. Rien à scanner, rien à forcer en direct.</span><span lang="en">The server never accepts a connection from the Internet: it is the one calling out, through an encrypted outbound tunnel, to a public relay. Nothing to scan, nothing to force directly.</span></p>
+      </div>
+      <figure class="diagram">
+        <svg viewBox="0 0 760 320" role="img" aria-labelledby="diag-title">
+          <title id="diag-title">Architecture : serveur sur site relié à Internet uniquement par un tunnel sortant</title>
+          <defs>
+            <marker id="arr-accent" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" class="arrowhead-accent"/></marker>
+            <marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" class="arrowhead"/></marker>
+          </defs>
+
+          <rect x="16" y="40" width="210" height="250" rx="16" class="box"/>
+          <text x="34" y="70" font-size="15" font-weight="700">Internet</text>
+          <rect x="32" y="88" width="178" height="40" rx="10" class="box"/>
+          <text x="121" y="113" font-size="12.5" text-anchor="middle" lang="fr">Formulaire d'inscription</text>
+          <text x="121" y="113" font-size="12.5" text-anchor="middle" lang="en">Enrolment form</text>
+          <rect x="32" y="138" width="178" height="40" rx="10" class="box"/>
+          <text x="121" y="163" font-size="12.5" text-anchor="middle" lang="fr">Page de signature QR</text>
+          <text x="121" y="163" font-size="12.5" text-anchor="middle" lang="en">QR sign-in page</text>
+          <path d="M121 178v36" class="wire"/>
+          <rect x="32" y="214" width="178" height="58" rx="12" class="box-accent"/>
+          <text x="121" y="239" font-size="13" font-weight="700" text-anchor="middle" lang="fr">Relais du tunnel</text>
+          <text x="121" y="239" font-size="13" font-weight="700" text-anchor="middle" lang="en">Tunnel relay</text>
+          <text x="121" y="258" font-size="11.5" text-anchor="middle" class="muted" lang="fr">seul point d'entrée public</text>
+          <text x="121" y="258" font-size="11.5" text-anchor="middle" class="muted" lang="en">the only public entry point</text>
+
+          <rect x="280" y="16" width="464" height="288" rx="18" class="wire-dash"/>
+          <text x="300" y="44" font-size="14" font-weight="700" lang="fr">Locaux de l'organisme</text>
+          <text x="300" y="44" font-size="14" font-weight="700" lang="en">Provider's premises</text>
+
+          <path d="M226 96 L318 116" class="wire" marker-end="url(#arr)"/>
+          <path d="M313 106l14 14M327 106l-14 14" class="block-x"/>
+          <text x="300" y="80" font-size="11.5" class="muted" lang="fr">entrant : refusé</text>
+          <text x="300" y="80" font-size="11.5" class="muted" lang="en">inbound: refused</text>
+
+          <rect x="300" y="122" width="130" height="74" rx="12" class="box"/>
+          <text x="365" y="152" font-size="13" font-weight="700" text-anchor="middle" lang="fr">Box internet</text>
+          <text x="365" y="152" font-size="13" font-weight="700" text-anchor="middle" lang="en">Internet router</text>
+          <text x="365" y="173" font-size="12" font-weight="700" text-anchor="middle" fill="currentColor" class="accent-text" lang="fr">0 port entrant</text>
+          <text x="365" y="173" font-size="12" font-weight="700" text-anchor="middle" fill="currentColor" class="accent-text" lang="en">0 inbound port</text>
+
+          <rect x="470" y="58" width="254" height="150" rx="14" class="box"/>
+          <text x="486" y="84" font-size="13" font-weight="700" lang="fr">Serveur dédié · Docker</text>
+          <text x="486" y="84" font-size="13" font-weight="700" lang="en">Dedicated server · Docker</text>
+          <rect x="486" y="98" width="222" height="28" rx="8" class="box"/>
+          <text x="500" y="117" font-size="12.5">Application</text>
+          <rect x="486" y="132" width="222" height="28" rx="8" class="box"/>
+          <text x="500" y="151" font-size="12.5" lang="fr">PostgreSQL chiffré</text>
+          <text x="500" y="151" font-size="12.5" lang="en">Encrypted PostgreSQL</text>
+          <rect x="486" y="166" width="222" height="28" rx="8" class="box"/>
+          <text x="500" y="185" font-size="12.5" lang="fr">Proxy local</text>
+          <text x="500" y="185" font-size="12.5" lang="en">Local proxy</text>
+
+          <path d="M470 150 H436" class="wire-accent" marker-end="url(#arr-accent)"/>
+          <path d="M300 168 C 262 168, 262 243, 214 243" class="wire-accent" marker-end="url(#arr-accent)"/>
+          <text x="300" y="222" font-size="11.5" font-weight="700" class="accent-text" lang="fr">tunnel sortant, chiffré</text>
+          <text x="300" y="222" font-size="11.5" font-weight="700" class="accent-text" lang="en">outbound tunnel, encrypted</text>
+
+          <path d="M597 208 v18" class="wire" marker-end="url(#arr)"/>
+          <rect x="470" y="230" width="254" height="58" rx="12" class="box-green"/>
+          <text x="486" y="254" font-size="13" font-weight="700" lang="fr">NAS · sauvegardes chiffrées</text>
+          <text x="486" y="254" font-size="13" font-weight="700" lang="en">NAS · encrypted backups</text>
+          <text x="486" y="274" font-size="11.5" class="muted" lang="fr">jamais exposé à Internet</text>
+          <text x="486" y="274" font-size="11.5" class="muted" lang="en">never exposed to the Internet</text>
+
+          <text x="300" y="278" font-size="11.5" class="muted" lang="fr">Administration : Tailscale SSH</text>
+          <text x="300" y="278" font-size="11.5" class="muted" lang="en">Administration: Tailscale SSH</text>
+        </svg>
+        <figcaption><span lang="fr">Seules deux pages sont publiques, et elles passent par le tunnel. Le back-office n'est accessible que depuis le réseau local de l'organisme.</span><span lang="en">Only two pages are public, and both go through the tunnel. The back office is reachable only from the provider's local network.</span></figcaption>
+      </figure>
+    </section>
+
+    <section class="block reveal">
+      <span class="label"><span lang="fr">Les autres verrous</span><span lang="en">The other locks</span></span>
+      <h2><span lang="fr">Pensé pour le jour du contrôle</span><span lang="en">Designed for audit day</span></h2>
+      <p><span lang="fr">L'organisme peut être contrôlé à tout moment. Chaque choix technique répond à une question simple : <strong>peut-on prouver ce qui s'est passé ?</strong></span><span lang="en">The provider can be audited at any time. Every technical choice answers one simple question: <strong>can we prove what happened?</strong></span></p>
+      <ul class="checklist">
+        <li><span><strong><span lang="fr">Liens à usage unique.</span><span lang="en">Single-use links.</span></strong> <span><span lang="fr">Jeton aléatoire long, durée de vie limitée, révocable à tout moment.</span><span lang="en">Long random token, limited lifetime, revocable at any time.</span></span></span></li>
+        <li><span><strong><span lang="fr">Émargement anti-fraude.</span><span lang="en">Fraud-proof attendance.</span></strong> <span><span lang="fr">Un nom signé est verrouillé, un appareil ne signe qu'une fois par séance, et le lien ne vit que pendant le créneau.</span><span lang="en">A signed name is locked, a device signs only once per session, and the link only lives during the time slot.</span></span></span></li>
+        <li><span><strong><span lang="fr">Rien ne disparaît.</span><span lang="en">Nothing disappears.</span></strong> <span><span lang="fr">Archivage plutôt que suppression, journal d'audit de chaque action, dossiers figés après l'attestation.</span><span lang="en">Archiving instead of deleting, audit log of every action, records frozen once the certificate is issued.</span></span></span></li>
+        <li><span><strong><span lang="fr">Données chiffrées.</span><span lang="en">Encrypted data.</span></strong> <span><span lang="fr">Base et sauvegardes chiffrées, réplication vers le NAS, restauration testée.</span><span lang="en">Encrypted database and backups, replication to the NAS, tested restores.</span></span></span></li>
+        <li><span><strong><span lang="fr">Accès maîtrisés.</span><span lang="en">Controlled access.</span></strong> <span><span lang="fr">Comptes nominatifs, verrouillage après échecs, double authentification sur l'administration, limitation de débit sur les pages publiques.</span><span lang="en">Named accounts, lockout after failures, two-factor authentication on administration, rate limiting on public pages.</span></span></span></li>
+        <li><span><strong><span lang="fr">Mises à jour sans risque.</span><span lang="en">Safe updates.</span></strong> <span><span lang="fr">Image construite par la CI une fois les tests passés, sauvegarde avant chaque mise à jour, retour arrière automatique en cas d'échec.</span><span lang="en">Image built by CI once tests pass, backup before every update, automatic rollback on failure.</span></span></span></li>
+      </ul>
+    </section>
+
+    <section class="block reveal">
+      <span class="label"><span lang="fr">Ce que j'en retiens</span><span lang="en">What I take from it</span></span>
+      <h2><span lang="fr">La sécurité, c'est aussi savoir dire non</span><span lang="en">Security also means saying no</span></h2>
+      <p class="quote"><span lang="fr">Dans un organisme contrôlé, la sécurité, c'est d'abord la preuve : qui a fait quoi, quand, et pourquoi on peut le croire.</span><span lang="en">In an audited organisation, security starts with evidence: who did what, when, and why it can be trusted.</span></p>
+      <p><span lang="fr">J'ai aussi appris à retirer des fonctions : pas de serveur d'e-mail, pas de compte formateur en première version. Chaque fonction en moins, c'est une surface d'attaque en moins, et un budget mieux tenu.</span><span lang="en">I also learned to remove features: no email server, no trainer accounts in the first version. Every feature dropped is attack surface removed, and a budget better kept.</span></p>
+    </section>
+
+    <a class="next" href="projet-cabinet.html">
+      <span><span class="label"><span lang="fr">Projet suivant</span><span lang="en">Next project</span></span><strong><span lang="fr">Un client ne doit jamais voir les dossiers d'un autre</span><span lang="en">A client must never see another client's files</span></strong></span>
+      <span class="next__arrow" aria-hidden="true">→</span>
+    </a>
+    <div class="end-cta">
+      <p><span lang="fr">Envie d'en parler ?</span><span lang="en">Want to talk about it?</span></p>
+      <a class="btn btn--accent btn--small" href="index.html#contact"><span lang="fr">Me contacter</span><span lang="en">Get in touch</span></a>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <p>© <span id="year">2026</span> Samet Bucak</p>
+    <p><a href="index.html"><span lang="fr">Retour à l'accueil</span><span lang="en">Back to home</span></a></p>
+  </footer>
+</body>
+</html>

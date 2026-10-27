@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="fr" data-title-fr="Détection comportementale · Samet Bucak" data-title-en="Behaviour-based detection · Samet Bucak">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; media-src 'self'; style-src 'self'; script-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>Détection comportementale · Samet Bucak</title>
+  <meta name="description" content="Repérer un attaquant à son comportement plutôt qu'à des signatures : capteur Rust, empreintes JA4+, leurres internes et score de risque explicable.">
+  <link rel="canonical" href="https://sametdu60.github.io/projet-detection.html">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/boot.js"></script>
+  <script src="js/net.js" defer></script>
+  <script src="js/site.js" defer></script>
+  <script src="js/review.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#contenu"><span lang="fr">Aller au contenu</span><span lang="en">Skip to content</span></a>
+  <svg hidden aria-hidden="true">
+    <symbol id="i-moon" viewBox="0 0 24 24"><path fill="currentColor" d="M12 3a9 9 0 1 0 9 9 7 7 0 0 1-9-9Z"/></symbol>
+  </svg>
+
+  <header class="header">
+    <div class="header__inner">
+      <a class="logo" href="index.html"><span class="logo__mark">SB</span><span>Samet Bucak</span></a>
+      <nav class="menu" aria-label="Navigation">
+        <a href="parcours.html"><span lang="fr">Parcours</span><span lang="en">Background</span></a>
+        <a href="competences.html"><span lang="fr">Compétences</span><span lang="en">Skills</span></a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+      <div class="toggles">
+        <button class="toggle" type="button" data-toggle-lang data-label-fr="Switch to English" data-label-en="Passer en français"><span lang="fr">EN</span><span lang="en">FR</span></button>
+        <button class="toggle" type="button" data-toggle-theme data-label-fr="Changer de thème" data-label-en="Toggle theme"><svg aria-hidden="true"><use href="#i-moon"/></svg></button>
+      </div>
+    </div>
+  </header>
+
+  <main class="page" id="contenu">
+    <a class="back" href="index.html">← <span lang="fr">Accueil</span><span lang="en">Home</span></a>
+
+    <section class="page-hero">
+      <span class="pill pill--live"><span lang="fr">Projet en cours · 2026 – 2027</span><span lang="en">Ongoing project · 2026 – 2027</span></span>
+      <h1><span lang="fr">Repérer un attaquant qui ne déclenche aucune alarme</span><span lang="en">Catching an attacker who triggers no alarm</span></h1>
+      <p class="lead"><span lang="fr">Les outils classiques reconnaissent ce qu'ils connaissent déjà. Un attaquant patient, lui, avance sous les seuils. Ce projet le repère à son comportement : son rythme, ses empreintes réseau, et les pièges qu'il finit par toucher.</span><span lang="en">Classic tools recognise what they already know. A patient attacker stays under the thresholds. This project catches him by behaviour: his timing, his network fingerprints, and the traps he eventually touches.</span></p>
+    </section>
+
+    <dl class="sheet reveal">
+      <div><dt><span lang="fr">Statut</span><span lang="en">Status</span></dt><dd><span lang="fr">Cadrage, puis construction du lab</span><span lang="en">Scoping, then building the lab</span></dd></div>
+      <div><dt>Stack</dt><dd>Rust · Python · JA4+</dd></div>
+      <div><dt><span lang="fr">Terrain</span><span lang="en">Playground</span></dt><dd><span lang="fr">Lab virtualisé, réseau d'entreprise simulé</span><span lang="en">Virtual lab, simulated company network</span></dd></div>
+      <div><dt><span lang="fr">Livrable</span><span lang="en">Deliverable</span></dt><dd><span lang="fr">Dépôt GitHub public et rapport</span><span lang="en">Public GitHub repo and report</span></dd></div>
+    </dl>
+
+    <section class="block reveal">
+      <span class="label"><span lang="fr">Le problème</span><span lang="en">The problem</span></span>
+      <h2><span lang="fr">Une signature ne voit que le passé</span><span lang="en">A signature only sees the past</span></h2>
+      <p><span lang="fr">Un antivirus ou une règle d'IDS compare ce qu'il voit à une liste de menaces connues. C'est efficace contre le bruit de fond, beaucoup moins contre quelqu'un qui est déjà entré, qui utilise les outils du système et qui prend son temps. Lui ne ressemble à rien de connu. Il <strong>se comporte</strong> différemment.</span><span lang="en">An antivirus or an IDS rule compares what it sees with a list of known threats. That works against background noise, much less against someone who is already inside, uses the system's own tools and takes his time. He looks like nothing known. He <strong>behaves</strong> differently.</span></p>
+      <p class="quote"><span lang="fr">L'idée : ne plus chercher ce qu'il est, mais observer ce qu'il fait.</span><span lang="en">The idea: stop looking for what he is, and watch what he does.</span></p>
+    </section>
+
+    <section class="block reveal">
+      <span class="label"><span lang="fr">Le terrain de jeu</span><span lang="en">The playground</span></span>
+      <h2><span lang="fr">Un vrai réseau d'entreprise, en miniature</span><span lang="en">A real company network, in miniature</span></h2>
+      <p><span lang="fr">Tout se passe dans un lab que je construis : un siège segmenté derrière un firewall (DMZ, postes, serveurs), une agence reliée par VPN site-à-site, une administration qui ne passe que par VPN. Chaque flux autorisé a sa justification écrite. Ci-dessous, une simulation : regardez ce qui arrive quand une machine touche le serveur leurre.</span><span lang="en">Everything happens in a lab I am building: a head office segmented behind a firewall (DMZ, workstations, servers), a branch connected over site-to-site VPN, administration only through VPN. Every allowed flow has a written reason. Below is a simulation: watch what happens when a machine touches the decoy server.</span></p>
+      <figure class="lab">
+        <div class="lab__bar">
+          <span>lab · sensor-01</span>
+          <span class="lab__live" id="lab-state">live</span>
+          <button class="lab__pause" id="anim-toggle" type="button" aria-pressed="false">Pause</button>
+        </div>
+        <canvas id="net" aria-hidden="true"></canvas>
+        <ol class="lab__log" id="net-log" aria-hidden="true"></ol>
+      </figure>
+    </section>
+
+    <section class="block reveal">
+      <span class="label"><span lang="fr">Comment ça marche</span><span lang="en">How it works</span></span>
+      <h2><span lang="fr">Du paquet brut à l'alerte qui s'explique</span><span lang="en">From raw packet to an alert that explains itself</span></h2>
+      <ol class="pipeline">
+        <li><h3><span lang="fr">Capter</span><span lang="en">Capture</span></h3><p><span lang="fr">Un capteur écrit en Rust lit le trafic du lab en temps réel.</span><span lang="en">A sensor written in Rust reads the lab traffic in real time.</span></p></li>
+        <li><h3><span lang="fr">Empreinter</span><span lang="en">Fingerprint</span></h3><p><span lang="fr">Il calcule les empreintes JA4+ de TLS, TCP et SSH, sans rien déchiffrer.</span><span lang="en">It computes JA4+ fingerprints of TLS, TCP and SSH, decrypting nothing.</span></p></li>
+        <li><h3><span lang="fr">Comparer</span><span lang="en">Compare</span></h3><p><span lang="fr">Python apprend le normal de chaque machine et mesure les écarts.</span><span lang="en">Python learns what is normal for each machine and measures deviations.</span></p></li>
+        <li><h3><span lang="fr">Piéger</span><span lang="en">Trap</span></h3><p><span lang="fr">Des leurres internes signalent le moindre contact.</span><span lang="en">Internal decoys report the slightest contact.</span></p></li>
+        <li><h3><span lang="fr">Expliquer</span><span lang="en">Explain</span></h3><p><span lang="fr">Un score de risque où chaque alerte dit pourquoi elle existe.</span><span lang="en">A risk score where every alert says why it exists.</span></p></li>
+      </ol>
+    </section>
+
+    <section class="block reveal">
+      <span class="label"><span lang="fr">Les pièges</span><span lang="en">The traps</span></span>
+      <h2><span lang="fr">Des leurres que personne n'a de raison de toucher</span><span lang="en">Decoys nobody has a reason to touch</span></h2>
+      <p><span lang="fr">Un attaquant discret peut rester sous tous les seuils statistiques. Mais pour avancer, il doit explorer. Les leurres sont placés là où il regardera, et nulle part ailleurs : une alerte de leurre est presque toujours une vraie alerte.</span><span lang="en">A careful attacker can stay under every statistical threshold. But to move forward, he has to explore. The decoys sit exactly where he will look, and nowhere else: a decoy alert is almost always a real one.</span></p>
+      <div class="cards cards--2">
+        <div class="card"><div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="7" rx="1.5"/><rect x="3" y="13" width="18" height="7" rx="1.5"/><path d="M7 7.5h.01M7 16.5h.01"/></svg></div><h3><span lang="fr">Serveur honeypot interne</span><span lang="en">Internal honeypot server</span></h3><p><span lang="fr">Un faux serveur de sauvegarde dans la zone serveurs. Il n'a aucun utilisateur légitime.</span><span lang="en">A fake backup server in the server zone. It has no legitimate user.</span></p></div>
+        <div class="card"><div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h4"/></svg></div><h3><span lang="fr">Fichiers canary</span><span lang="en">Canary files</span></h3><p><span lang="fr">Des documents appétissants sur des partages, qui signalent leur ouverture.</span><span lang="en">Tempting documents on file shares that report when they are opened.</span></p></div>
+        <div class="card"><div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg></div><h3><span lang="fr">Comptes leurres</span><span lang="en">Decoy accounts</span></h3><p><span lang="fr">Des identifiants semés exprès. Les utiliser, c'est se dénoncer.</span><span lang="en">Credentials planted on purpose. Using them gives you away.</span></p></div>
+        <div class="card"><div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg></div><h3><span lang="fr">Noms DNS piégés</span><span lang="en">Trapped DNS names</span></h3><p><span lang="fr">Des noms de machines qui n'existent que pour être cherchés.</span><span lang="en">Hostnames that only exist to be looked up.</span></p></div>
+      </div>
+    </section>
+
+    <section class="block reveal">
+      <span class="label"><span lang="fr">L'IA, sans raconter d'histoires</span><span lang="en">AI, without the hype</span></span>
+      <h2><span lang="fr">Chaque modèle doit battre une méthode simple</span><span lang="en">Every model has to beat a simple method</span></h2>
+      <p><span lang="fr">Détection d'anomalies (Isolation Forest), modèle de séquence pour suivre l'avancée d'une attaque, explication des alertes façon SHAP, et un modèle de langage local pour résumer un incident. Chaque modèle sera comparé à une méthode statistique simple, sur les mêmes données. <strong>S'il ne fait pas mieux, le rapport le dira.</strong></span><span lang="en">Anomaly detection (Isolation Forest), a sequence model to follow an attack's progress, SHAP-style alert explanations, and a local language model to summarise an incident. Each model will be compared with a simple statistical method on the same data. <strong>If it does no better, the report will say so.</strong></span></p>
+      <div class="answer">
+        <span class="label"><span lang="fr">Esprit critique</span><span lang="en">Critical thinking</span></span>
+        <p><span lang="fr">Le livre qui sert de référence au projet promet de repérer un risque jusqu'à 45 jours à l'avance. Mon lab rejoue des attaques en quelques heures : je mesurerai ce qui tient vraiment, et je l'écrirai, même si ça ne tient pas.</span><span lang="en">The reference book behind the project claims risks can be spotted up to 45 days in advance. My lab replays attacks in a few hours: I will measure what actually holds, and write it down, even if it doesn't.</span></p>
+      </div>
+    </section>
+
+    <section class="block reveal">
+      <span class="label"><span lang="fr">Où j'en suis</span><span lang="en">Where I am</span></span>
+      <h2><span lang="fr">Un jalon après l'autre</span><span lang="en">One milestone at a time</span></h2>
+      <p><span lang="fr">Si le temps manque, l'ordre de priorité est clair : un projet plus petit mais terminé vaut mieux qu'un projet ambitieux à moitié fait.</span><span lang="en">If time runs short, priorities are clear: a smaller finished project beats an ambitious half-done one.</span></p>
+      <ol class="roadmap">
+        <li class="is-now"><span><strong><span lang="fr">Cadrage</span><span lang="en">Scoping</span></strong> · <span><span lang="fr">lectures, architecture, choix techniques</span><span lang="en">reading, architecture, technical choices</span></span></span><em><span lang="fr">En cours</span><span lang="en">Now</span></em></li>
+        <li><span><strong>Lab</strong> · <span><span lang="fr">firewall, segments, VPN admin et site-à-site</span><span lang="en">firewall, segments, admin and site-to-site VPN</span></span></span><em><span lang="fr">À venir</span><span lang="en">Next</span></em></li>
+        <li><span><strong><span lang="fr">Collecte</span><span lang="en">Collection</span></strong> · <span><span lang="fr">capteur Rust, du pcap à la capture live</span><span lang="en">Rust sensor, from pcap to live capture</span></span></span><em><span lang="fr">À venir</span><span lang="en">Next</span></em></li>
+        <li><span><strong>JA4+</strong> · <span><span lang="fr">empreintes codées à la main, validées contre la référence</span><span lang="en">fingerprints coded by hand, validated against the reference</span></span></span><em><span lang="fr">À venir</span><span lang="en">Next</span></em></li>
+        <li><span><strong><span lang="fr">Comportements</span><span lang="en">Behaviours</span></strong> · <span><span lang="fr">normal par machine, puis recon lente, beaconing, mouvement latéral, exfiltration</span><span lang="en">per-machine baseline, then slow recon, beaconing, lateral movement, exfiltration</span></span></span><em><span lang="fr">À venir</span><span lang="en">Next</span></em></li>
+        <li><span><strong><span lang="fr">Leurres et score</span><span lang="en">Decoys and score</span></strong> · <span><span lang="fr">deception interne, score de risque, évaluation chiffrée</span><span lang="en">internal deception, risk score, measured evaluation</span></span></span><em><span lang="fr">À venir</span><span lang="en">Next</span></em></li>
+        <li><span><strong><span lang="fr">IA et temps réel</span><span lang="en">AI and real time</span></strong> · <span><span lang="fr">modèles comparés, flux continu, rapport final</span><span lang="en">compared models, continuous stream, final report</span></span></span><em><span lang="fr">À venir</span><span lang="en">Next</span></em></li>
+      </ol>
+    </section>
+
+    <section class="block reveal">
+      <span class="label"><span lang="fr">Avant ce projet</span><span lang="en">Before this project</span></span>
+      <h2>PsyberSentinel</h2>
+      <p><span lang="fr">Un projet d'école qui a posé les bases : la conception d'une plateforme XDR d'analyse comportementale, centrée sur les menaces internes et les techniques Living-off-the-Land. Ingestion PCAP et NetFlow, inspection des paquets, logs normalisés au format OCSF, détection non supervisée exécutée en local et alertes expliquées par SHAP.</span><span lang="en">A school project that laid the groundwork: designing a behavioural XDR platform focused on insider threats and Living-off-the-Land techniques. PCAP and NetFlow ingestion, packet inspection, logs normalised to OCSF, unsupervised detection running locally and alerts explained with SHAP.</span></p>
+      <ul class="tags"><li>PCAP / NetFlow</li><li>DPI</li><li>OCSF</li><li>Isolation Forest</li><li>Autoencoders</li><li>SHAP</li></ul>
+    </section>
+
+    <a class="next" href="projet-formation.html">
+      <span><span class="label"><span lang="fr">Projet suivant</span><span lang="en">Next project</span></span><strong><span lang="fr">Ouvrir un logiciel à Internet sans ouvrir un seul port</span><span lang="en">Putting an app online without opening a single port</span></strong></span>
+      <span class="next__arrow" aria-hidden="true">→</span>
+    </a>
+    <div class="end-cta">
+      <p><span lang="fr">Envie d'en parler ?</span><span lang="en">Want to talk about it?</span></p>
+      <a class="btn btn--accent btn--small" href="index.html#contact"><span lang="fr">Me contacter</span><span lang="en">Get in touch</span></a>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <p>© <span id="year">2026</span> Samet Bucak</p>
+    <p><a href="index.html"><span lang="fr">Retour à l'accueil</span><span lang="en">Back to home</span></a></p>
+  </footer>
+</body>
+</html>

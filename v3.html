@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="fr" data-page="home" data-ui="3" data-title-fr="Samet Bucak · Cybersécurité" data-title-en="Samet Bucak · Cybersecurity">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; media-src 'self'; style-src 'self'; script-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>Samet Bucak · Cybersécurité</title>
+  <meta name="description" content="Samet Bucak, futur ingénieur cybersécurité (ESIEA, 2027). Réseau, systèmes et détection.">
+  <meta name="theme-color" content="#0a0e12">
+  <link rel="canonical" href="https://sametdu60.github.io/v3.html">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/home-3.css">
+  <script src="js/boot.js"></script>
+  <script src="js/net.js" defer></script>
+  <script src="js/site.js" defer></script>
+  <script src="js/review.js" defer></script>
+  <script src="js/console.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#contenu"><span lang="fr">Aller au contenu</span><span lang="en">Skip to content</span></a>
+
+  <header class="header">
+    <div class="header__inner">
+      <a class="logo" href="v3.html"><span class="logo__mark">SB</span><span>Samet Bucak</span></a>
+      <nav class="menu" aria-label="Navigation">
+        <a href="parcours.html"><span lang="fr">Parcours</span><span lang="en">Background</span></a>
+        <a href="competences.html"><span lang="fr">Compétences</span><span lang="en">Skills</span></a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="toggles">
+        <button class="toggle" type="button" data-toggle-lang data-label-fr="Switch to English" data-label-en="Passer en français"><span lang="fr">EN</span><span lang="en">FR</span></button>
+      </div>
+    </div>
+  </header>
+
+  <main class="soc" id="contenu">
+    <div class="soc__status">
+      <span class="soc__dot" aria-hidden="true"></span>
+      <b>analyst@sb-soc</b>
+      <span>status: <em><span lang="fr">disponible 2027-09</span><span lang="en">available 2027-09</span></em></span>
+      <span>loc: Paris, FR</span>
+      <span class="soc__hide-sm">shift: <span lang="fr">alternance @ Orange Viaccess-Orca</span><span lang="en">work-study @ Orange Viaccess-Orca</span></span>
+      <time class="soc__clock" id="soc-clock">--:--:--</time>
+    </div>
+
+    <div class="soc__grid">
+      <section class="panel p-whoami" aria-labelledby="whoami-title">
+        <header class="panel__head"><span>~/whoami</span></header>
+        <div class="whoami">
+          <img class="whoami__photo" src="assets/photos/img-profil.jpg" width="96" height="96" alt="Samet Bucak">
+          <div>
+            <h1 id="whoami-title">Samet Bucak</h1>
+            <p class="whoami__role"><span lang="fr">Futur ingénieur cybersécurité. Je viens du réseau, je vais vers la détection.</span><span lang="en">Cybersecurity engineer to be. I come from networking, I'm heading for detection.</span></p>
+          </div>
+        </div>
+        <dl class="kv">
+          <div><dt>role</dt><dd><span lang="fr">Apprenti ingénieur · Orange Viaccess-Orca</span><span lang="en">Apprentice engineer · Orange Viaccess-Orca</span></dd></div>
+          <div><dt>before</dt><dd><span lang="fr">Technicien systèmes et réseaux · 2 ans en DSI</span><span lang="en">Systems &amp; network technician · 2 years in IT ops</span></dd></div>
+          <div><dt>degree</dt><dd><span lang="fr">Ingénieur ESIEA, majeure cyber · 2027</span><span lang="en">ESIEA engineer, cyber major · 2027</span></dd></div>
+          <div><dt>focus</dt><dd>SOC · <span lang="fr">sécurité des infras</span><span lang="en">infra security</span> · <span lang="fr">détection</span><span lang="en">detection</span></dd></div>
+        </dl>
+        <div class="panel__actions">
+          <a class="btn btn--accent btn--small" href="#contact"><span lang="fr">Me contacter</span><span lang="en">Get in touch</span></a>
+          <a class="btn btn--small" href="https://www.linkedin.com/in/samet-bucak/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+        </div>
+      </section>
+
+      <section class="panel p-map" aria-labelledby="map-title">
+        <header class="panel__head">
+          <span id="map-title">network.map · sensor-01</span>
+          <span class="lab__live" id="lab-state">live</span>
+          <button class="lab__pause" id="anim-toggle" type="button" aria-pressed="false">Pause</button>
+        </header>
+        <canvas id="net" aria-hidden="true"></canvas>
+        <ol class="lab__log" id="net-log" aria-hidden="true"></ol>
+        <p class="panel__caption"><span lang="fr">Simulation du lab de mon projet de détection. Le serveur bak-02 est un leurre : personne n'a de raison de le toucher. Attendez l'alerte.</span><span lang="en">A simulation of my detection project's lab. The bak-02 server is a decoy: nobody has a reason to touch it. Wait for the alert.</span></p>
+      </section>
+
+      <section class="panel p-inc" aria-labelledby="inc-title">
+        <header class="panel__head"><span id="inc-title">incidents.queue</span><span class="panel__count">4</span></header>
+        <ol class="tickets">
+          <li>
+            <a href="projet-detection.html">
+              <span class="tk__id">INC-001</span>
+              <span class="tk__title"><span lang="fr">Repérer un attaquant qui ne déclenche aucune alarme</span><span lang="en">Catch an attacker who triggers no alarm</span></span>
+              <span class="chip chip--warn"><span lang="fr">en cours</span><span lang="en">ongoing</span></span>
+              <span class="tk__go" aria-hidden="true">→</span>
+            </a>
+          </li>
+          <li>
+            <a href="projet-formation.html">
+              <span class="tk__id">INC-002</span>
+              <span class="tk__title"><span lang="fr">Exposer un logiciel métier sans ouvrir un seul port</span><span lang="en">Put business software online without opening a port</span></span>
+              <span class="chip chip--ok"><span lang="fr">testé</span><span lang="en">tested</span></span>
+              <span class="tk__go" aria-hidden="true">→</span>
+            </a>
+          </li>
+          <li>
+            <a href="projet-cabinet.html">
+              <span class="tk__id">INC-003</span>
+              <span class="tk__title"><span lang="fr">Cloisonner les dossiers de dizaines de clients</span><span lang="en">Isolate the files of dozens of clients</span></span>
+              <span class="chip chip--info"><span lang="fr">conception</span><span lang="en">design</span></span>
+              <span class="tk__go" aria-hidden="true">→</span>
+            </a>
+          </li>
+          <li class="tk--static">
+            <span class="tk__id">INC-004</span>
+            <span class="tk__title"><span lang="fr">Sites clients en ligne :</span><span lang="en">Client websites live:</span> <a href="https://ferovagroupe.fr" target="_blank" rel="noopener noreferrer">ferovagroupe.fr</a> · <a href="https://nflconciergerie.fr" target="_blank" rel="noopener noreferrer">nflconciergerie.fr</a></span>
+            <span class="chip chip--ok"><span lang="fr">en ligne</span><span lang="en">live</span></span>
+          </li>
+        </ol>
+      </section>
+
+      <section class="panel p-log" aria-labelledby="log-title">
+        <header class="panel__head"><span id="log-title">career.log</span></header>
+        <ol class="loglines">
+          <li><time>2015–2021</time><b class="lv">INFO</b><span lang="fr">terrain · restauration, logistique, sûreté à Roissy-CDG</span><span lang="en">field work · restaurants, logistics, Paris-CDG security</span></li>
+          <li><time>2021</time><b class="lv">INFO</b><span lang="fr">pivot · technicien réseau (Greta)</span><span lang="en">pivot · network technician (Greta)</span></li>
+          <li><time>2022–2024</time><b class="lv">INFO</b><span lang="fr">BTS SIO SISR · DSI du CFPTS : MikroTik, VLAN, VoIP, N1/N2</span><span lang="en">IT degree · CFPTS IT dept: MikroTik, VLAN, VoIP, L1/L2</span></li>
+          <li><time>2024–2025</time><b class="lv">INFO</b><span lang="fr">ESIEA cyber · assistant chef de projet, Orange Viaccess-Orca</span><span lang="en">ESIEA cyber · assistant project manager, Orange Viaccess-Orca</span></li>
+          <li><time>2025–now</time><b class="lv">INFO</b><span lang="fr">apprenti ingénieur automatisation QA, modèle de langage en local</span><span lang="en">apprentice QA automation engineer, local language model</span></li>
+          <li class="is-alert"><time>2027-09</time><b class="lv">ALERT</b><span lang="fr">disponible pour un premier poste en cybersécurité</span><span lang="en">available for a first cybersecurity role</span></li>
+        </ol>
+        <a class="panel__link" href="parcours.html">cat parcours →</a>
+      </section>
+
+      <section class="panel p-skills" aria-labelledby="skills-title">
+        <header class="panel__head"><span id="skills-title">skills.stat</span></header>
+        <ul class="bars">
+          <li><span><span lang="fr">réseau</span><span lang="en">network</span></span><span class="bar" data-v="5" aria-hidden="true"></span><span>5/5</span></li>
+          <li><span><span lang="fr">systèmes</span><span lang="en">systems</span></span><span class="bar" data-v="4" aria-hidden="true"></span><span>4/5</span></li>
+          <li><span><span lang="fr">gouvernance</span><span lang="en">governance</span></span><span class="bar" data-v="4" aria-hidden="true"></span><span>4/5</span></li>
+          <li><span><span lang="fr">défense</span><span lang="en">defense</span></span><span class="bar" data-v="3" aria-hidden="true"></span><span>3/5</span></li>
+          <li><span>dev</span><span class="bar" data-v="3" aria-hidden="true"></span><span>3/5</span></li>
+          <li><span><span lang="fr">offensif</span><span lang="en">offensive</span></span><span class="bar" data-v="2" aria-hidden="true"></span><span>2/5</span></li>
+        </ul>
+        <a class="panel__link" href="competences.html">cat competences →</a>
+      </section>
+
+      <section class="panel p-video" aria-labelledby="video-title">
+        <header class="panel__head"><span id="video-title">video.feed</span><span class="rec">REC</span></header>
+        <button class="feed" type="button" id="video-tile" aria-haspopup="dialog">
+          <img src="assets/photos/img-profil.jpg" width="200" height="200" alt="">
+          <span class="feed__play" aria-hidden="true">▶</span>
+        </button>
+        <p class="panel__caption"><span lang="fr">Interview filmée au Mondial de l'Auto 2026.</span><span lang="en">Interview filmed at the 2026 Paris Motor Show.</span></p>
+      </section>
+
+      <section class="panel p-contact" id="contact" aria-labelledby="contact-title">
+        <header class="panel__head"><span id="contact-title">contact.sh</span></header>
+        <div class="term">
+          <p><span class="prompt">$</span> echo $NEXT_ROLE</p>
+          <p class="out"><span lang="fr">SOC · sécurité des infrastructures · détection (septembre 2027)</span><span lang="en">SOC · infrastructure security · detection (September 2027)</span></p>
+          <p><span class="prompt">$</span> mail samet.bucak60@gmail.com<span class="cursor" aria-hidden="true"></span></p>
+        </div>
+        <div class="panel__actions">
+          <button class="btn btn--accent btn--small" type="button" data-copy="samet.bucak60@gmail.com"><span lang="fr">Copier l'e-mail</span><span lang="en">Copy email</span></button>
+          <a class="btn btn--small" href="mailto:samet.bucak60@gmail.com"><span lang="fr">Écrire</span><span lang="en">Email</span></a>
+          <a class="btn btn--small" href="https://github.com/sametdu60" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <dialog class="modal" id="video-modal" aria-label="WhyMe">
+    <button class="modal__close" type="button" data-label-fr="Fermer" data-label-en="Close">×</button>
+    <video controls playsinline preload="none" data-src="assets/video/video.mp4"></video>
+  </dialog>
+
+  <footer class="footer">
+    <p>© <span id="year">2026</span> Samet Bucak</p>
+    <p><span lang="fr">Aucun cookie, aucun traceur. La console du navigateur cache un message.</span><span lang="en">No cookies, no trackers. The browser console hides a message.</span></p>
+  </footer>
+  <!-- ZmxhZ3tsYV9jdXJpb3NpdGVfcGFpZV90b3Vqb3Vyc30= -->
+</body>
+</html>
