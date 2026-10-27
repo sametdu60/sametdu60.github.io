@@ -12,7 +12,6 @@
   <link rel="stylesheet" href="css/style.css">
   <script src="js/boot.js"></script>
   <script src="js/site.js" defer></script>
-  <script src="js/review.js" defer></script>
 </head>
 <body>
   <a class="skip" href="#contenu"><span lang="fr">Aller au contenu</span><span lang="en">Skip to content</span></a>
@@ -26,6 +25,8 @@
       <nav class="menu" aria-label="Navigation">
         <a href="parcours.html"><span lang="fr">Parcours</span><span lang="en">Background</span></a>
         <a href="competences.html"><span lang="fr">Compétences</span><span lang="en">Skills</span></a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="cv.html"><span lang="fr">CV classique</span><span lang="en">Classic CV</span></a>
         <a href="index.html#contact">Contact</a>
       </nav>
       <div class="toggles">
@@ -167,7 +168,7 @@
       <p><span lang="fr">J'ai aussi appris à retirer des fonctions : pas de serveur d'e-mail, pas de compte formateur en première version. Chaque fonction en moins, c'est une surface d'attaque en moins, et un budget mieux tenu.</span><span lang="en">I also learned to remove features: no email server, no trainer accounts in the first version. Every feature dropped is attack surface removed, and a budget better kept.</span></p>
     </section>
 
-    <a class="next" href="projet-cabinet.html">
+    <a class="next" data-next="formation" href="projet-cabinet.html">
       <span><span class="label"><span lang="fr">Projet suivant</span><span lang="en">Next project</span></span><strong><span lang="fr">Un client ne doit jamais voir les dossiers d'un autre</span><span lang="en">A client must never see another client's files</span></strong></span>
       <span class="next__arrow" aria-hidden="true">→</span>
     </a>
@@ -181,5 +182,7 @@
     <p>© <span id="year">2026</span> Samet Bucak</p>
     <p><a href="index.html"><span lang="fr">Retour à l'accueil</span><span lang="en">Back to home</span></a></p>
   </footer>
+  <script src="js/data.js"></script>
+  <script src="js/render.js"></script>
 </body>
 </html>

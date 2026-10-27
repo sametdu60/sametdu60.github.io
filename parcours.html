@@ -12,7 +12,6 @@
   <link rel="stylesheet" href="css/style.css">
   <script src="js/boot.js"></script>
   <script src="js/site.js" defer></script>
-  <script src="js/review.js" defer></script>
 </head>
 <body>
   <a class="skip" href="#contenu"><span lang="fr">Aller au contenu</span><span lang="en">Skip to content</span></a>
@@ -31,6 +30,8 @@
       <nav class="menu" aria-label="Navigation">
         <a href="parcours.html" aria-current="page"><span lang="fr">Parcours</span><span lang="en">Background</span></a>
         <a href="competences.html"><span lang="fr">Compétences</span><span lang="en">Skills</span></a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="cv.html"><span lang="fr">CV classique</span><span lang="en">Classic CV</span></a>
         <a href="index.html#contact">Contact</a>
       </nav>
       <div class="toggles">
@@ -126,7 +127,7 @@
         <div class="step__body">
           <span class="step__date"><span lang="fr">Septembre 2027</span><span lang="en">September 2027</span></span>
           <h3><span lang="fr">Diplôme, et premier poste en cybersécurité</span><span lang="en">Graduation, and a first cybersecurity job</span></h3>
-          <p><span lang="fr">SOC, sécurité des infrastructures ou détection : des postes où un profil réseau et systèmes sert dès le premier jour. C'est peut-être chez vous.</span><span lang="en">SOC, infrastructure security or detection: roles where a networks and systems background helps from day one. Maybe at your company.</span></p>
+          <p><span lang="fr">Un CDI à Paris, en SOC, en sécurité des infrastructures et du cloud ou en détection : des postes où un profil réseau et systèmes sert dès le premier jour. C'est peut-être chez vous.</span><span lang="en">A permanent role in Paris, in a SOC, infrastructure and cloud security or detection: roles where a networks and systems background helps from day one. Maybe at your company.</span></p>
           <div class="cta-row"><a class="btn btn--accent btn--small" href="index.html#contact"><span lang="fr">Me contacter</span><span lang="en">Get in touch</span></a></div>
         </div>
       </li>
@@ -134,12 +135,8 @@
 
     <section class="block reveal">
       <span class="label"><span lang="fr">À côté de l'alternance</span><span lang="en">Alongside work-study</span></span>
-      <h2><span lang="fr">Des projets, pour de vrais clients</span><span lang="en">Projects, for real clients</span></h2>
-      <div class="cards">
-        <a class="card tile--hover" href="projet-formation.html"><h3><span lang="fr">Plateforme de formation</span><span lang="en">Training platform</span></h3><p><span lang="fr">Logiciel métier complet, sans aucun port entrant.</span><span lang="en">A full business application with no inbound port.</span></p><p class="go"><span lang="fr">Voir</span><span lang="en">See</span></p></a>
-        <a class="card tile--hover" href="projet-cabinet.html"><h3><span lang="fr">Portail cabinet comptable</span><span lang="en">Accounting firm portal</span></h3><p><span lang="fr">Cloisonnement multi-clients vérifié côté serveur.</span><span lang="en">Multi-tenant isolation enforced server side.</span></p><p class="go"><span lang="fr">Voir</span><span lang="en">See</span></p></a>
-        <div class="card"><h3><span lang="fr">Freelance web</span><span lang="en">Freelance web</span></h3><p><span lang="fr">Sites vitrines (<a href="https://ferovagroupe.fr" target="_blank" rel="noopener noreferrer">ferovagroupe.fr</a>, <a href="https://nflconciergerie.fr" target="_blank" rel="noopener noreferrer">nflconciergerie.fr</a>) et un simulateur de devis en ligne sur Quasar et Supabase.</span><span lang="en">Showcase websites (<a href="https://ferovagroupe.fr" target="_blank" rel="noopener noreferrer">ferovagroupe.fr</a>, <a href="https://nflconciergerie.fr" target="_blank" rel="noopener noreferrer">nflconciergerie.fr</a>) and an online quote simulator built on Quasar and Supabase.</span></p></div>
-      </div>
+      <h2><span lang="fr">Des projets menés en parallèle</span><span lang="en">Projects on the side</span></h2>
+      <div class="cards cards--2" data-cv="side-projects"></div>
     </section>
 
     <section class="block reveal">
@@ -164,5 +161,7 @@
     <p>© <span id="year">2026</span> Samet Bucak</p>
     <p><a href="index.html"><span lang="fr">Retour à l'accueil</span><span lang="en">Back to home</span></a></p>
   </footer>
+  <script src="js/data.js"></script>
+  <script src="js/render.js"></script>
 </body>
 </html>

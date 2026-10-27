@@ -10,6 +10,18 @@
   const lang = () => root.dataset.lang === "en" ? "en" : "fr";
   const t = (fr, en) => lang() === "en" ? en : fr;
 
+  /* Le lien « Accueil » des pages de détail ramène d'où l'on vient ------ */
+  const homes = (window.SITE && window.SITE.homes) || {};
+  const home = homes[root.dataset.ui];
+  if (home && home !== "index.html" && !root.dataset.page) {
+    document.querySelectorAll('a[href^="index.html"]').forEach(a => {
+      const href = a.getAttribute("href");
+      // Le CV classique n'a pas de section contact : ce lien-là reste sur l'accueil.
+      if (home === "cv.html" && href.includes("#")) return;
+      a.setAttribute("href", href.replace("index.html", home));
+    });
+  }
+
   /* Langue ------------------------------------------------------------- */
   function applyLang(next) {
     root.dataset.lang = next;

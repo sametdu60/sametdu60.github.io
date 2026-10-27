@@ -1,23 +1,22 @@
 <!doctype html>
-<html lang="fr" data-page="home" data-ui="1" data-title-fr="Samet Bucak · Cybersécurité" data-title-en="Samet Bucak · Cybersecurity">
+<html lang="fr" data-page="home" data-ui="1" data-title-fr="Samet Bucak · CV en ligne · Cybersécurité" data-title-en="Samet Bucak · Online résumé · Cybersecurity">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; media-src 'self'; style-src 'self'; script-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'">
   <meta name="referrer" content="strict-origin-when-cross-origin">
-  <title>Samet Bucak · Cybersécurité</title>
-  <meta name="description" content="Samet Bucak, futur ingénieur cybersécurité (ESIEA, 2027). Je viens du réseau, je vais vers la détection.">
+  <title>Samet Bucak · CV en ligne · Cybersécurité</title>
+  <meta name="description" content="CV en ligne de Samet Bucak, futur ingénieur cybersécurité (ESIEA, 2027). Premier poste en CDI à Paris dès septembre 2027 : SOC, sécurité des infrastructures et du cloud, détection.">
   <meta name="theme-color" content="#f3f0e9">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Samet Bucak · Cybersécurité">
-  <meta property="og:description" content="Je viens du réseau, je vais vers la détection. Disponible en septembre 2027.">
+  <meta property="og:title" content="Samet Bucak · CV en ligne · Cybersécurité">
+  <meta property="og:description" content="Je viens du réseau, je vais vers la détection. CDI à Paris dès septembre 2027.">
   <meta property="og:url" content="https://sametdu60.github.io/">
   <link rel="canonical" href="https://sametdu60.github.io/">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="css/style.css">
   <script src="js/boot.js"></script>
   <script src="js/site.js" defer></script>
-  <script src="js/review.js" defer></script>
   <script src="js/game.js" defer></script>
   <script src="js/xray.js" defer></script>
 </head>
@@ -38,6 +37,8 @@
       <nav class="menu" aria-label="Navigation">
         <a href="parcours.html"><span lang="fr">Parcours</span><span lang="en">Background</span></a>
         <a href="competences.html"><span lang="fr">Compétences</span><span lang="en">Skills</span></a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="cv.html"><span lang="fr">CV classique</span><span lang="en">Classic CV</span></a>
         <a href="#contact">Contact</a>
       </nav>
       <div class="toggles">
@@ -51,59 +52,37 @@
     <div class="bento">
 
       <div class="tile t-intro">
-        <div class="intro__top">
-          <span class="status"><span class="status__dot" aria-hidden="true"></span><span lang="fr">Disponible en septembre 2027</span><span lang="en">Available from September 2027</span></span>
-          <img class="avatar" src="assets/photos/img-profil.jpg" width="76" height="76" alt="Samet Bucak">
+        <div class="intro__main">
+          <div class="intro__badges">
+            <span class="pill-cv"><span lang="fr">CV en ligne</span><span lang="en">Online résumé</span></span>
+            <span class="status"><span class="status__dot" aria-hidden="true"></span><span lang="fr">Disponible en septembre 2027</span><span lang="en">Available from September 2027</span></span>
+          </div>
+          <div class="intro__id">
+            <img class="avatar" src="assets/photos/img-profil.jpg" width="88" height="88" alt="Samet Bucak">
+            <h1>Samet Bucak</h1>
+          </div>
+          <p class="tagline" data-cv="tagline"></p>
+          <p class="pitch" data-cv="pitch"></p>
+          <div class="cta-row">
+            <a class="btn btn--accent" href="#contact"><span lang="fr">Me contacter</span><span lang="en">Get in touch</span></a>
+            <a class="btn" href="cv.html"><span lang="fr">CV classique</span><span lang="en">Classic CV</span></a>
+            <a class="btn" href="portfolio.html">Portfolio</a>
+            <a class="btn" href="https://www.linkedin.com/in/samet-bucak/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+          </div>
         </div>
-        <h1>Samet Bucak</h1>
-        <p class="tagline"><span lang="fr">Je viens du réseau. Je vais vers la <em>détection</em>.</span><span lang="en">I come from networking. I'm heading for <em>threat detection</em>.</span></p>
-        <dl class="facts">
-          <div>
-            <dt><span lang="fr">Aujourd'hui</span><span lang="en">Today</span></dt>
-            <dd><span lang="fr">Apprenti ingénieur</span><span lang="en">Apprentice engineer</span> <span class="sub">· Orange Viaccess-Orca</span></dd>
+        <aside class="intro__side">
+          <div class="seek">
+            <span class="label"><span lang="fr">Ce que je cherche</span><span lang="en">What I'm looking for</span></span>
+            <p class="seek__title" data-cv="seeking-summary"></p>
+            <ul class="seek__roles" data-cv="seeking-roles"></ul>
+            <dl class="seek__meta" data-cv="seeking-meta"></dl>
           </div>
-          <div>
-            <dt><span lang="fr">Avant</span><span lang="en">Before</span></dt>
-            <dd><span lang="fr">Technicien systèmes et réseaux</span><span lang="en">Systems &amp; network technician</span> <span class="sub"><span lang="fr">· 2 ans en DSI</span><span lang="en">· 2 years in IT ops</span></span></dd>
-          </div>
-          <div>
-            <dt><span lang="fr">Diplôme</span><span lang="en">Degree</span></dt>
-            <dd><span lang="fr">Ingénieur cybersécurité</span><span lang="en">Cybersecurity engineer</span> <span class="sub">· ESIEA, 2027</span></dd>
-          </div>
-        </dl>
-        <div class="cta-row">
-          <a class="btn btn--accent" href="#contact"><span lang="fr">Me contacter</span><span lang="en">Get in touch</span></a>
-          <a class="btn" href="https://www.linkedin.com/in/samet-bucak/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
-        </div>
+          <dl class="facts" data-cv="facts"></dl>
+        </aside>
       </div>
 
-      <section class="tile t-game" id="game" aria-labelledby="game-title">
-        <span class="label"><span lang="fr">Mini-défi · 30 secondes</span><span lang="en">Quick challenge · 30 seconds</span></span>
-        <h2 class="game__title" id="game-title"><span lang="fr">Une de ces machines est piratée. Laquelle ?</span><span lang="en">One of these machines is compromised. Which one?</span></h2>
-        <p class="game__sub"><span lang="fr">Chaque graphe montre ses connexions vers Internet. Cliquez sur la machine suspecte.</span><span lang="en">Each chart shows its connections to the Internet. Click the suspicious machine.</span></p>
-        <div class="game__grid">
-          <button class="host" type="button"><span class="host__badge"></span><span class="host__top"><svg class="host__icon" aria-hidden="true"><use href="#i-laptop"/></svg><span class="host__name"><span lang="fr">Compta</span><span lang="en">Accounting</span></span><span class="host__led"></span></span><canvas aria-hidden="true"></canvas></button>
-          <button class="host" type="button"><span class="host__badge"></span><span class="host__top"><svg class="host__icon" aria-hidden="true"><use href="#i-laptop"/></svg><span class="host__name"><span lang="fr">RH</span><span lang="en">HR</span></span><span class="host__led"></span></span><canvas aria-hidden="true"></canvas></button>
-          <button class="host" type="button"><span class="host__badge"></span><span class="host__top"><svg class="host__icon" aria-hidden="true"><use href="#i-laptop"/></svg><span class="host__name"><span lang="fr">Accueil</span><span lang="en">Front desk</span></span><span class="host__led"></span></span><canvas aria-hidden="true"></canvas></button>
-          <button class="host" type="button"><span class="host__badge"></span><span class="host__top"><svg class="host__icon" aria-hidden="true"><use href="#i-laptop"/></svg><span class="host__name"><span lang="fr">Direction</span><span lang="en">Management</span></span><span class="host__led"></span></span><canvas aria-hidden="true"></canvas></button>
-          <button class="host" type="button"><span class="host__badge"></span><span class="host__top"><svg class="host__icon" aria-hidden="true"><use href="#i-laptop"/></svg><span class="host__name"><span lang="fr">Commercial</span><span lang="en">Sales</span></span><span class="host__led"></span></span><canvas aria-hidden="true"></canvas></button>
-          <button class="host" type="button"><span class="host__badge"></span><span class="host__top"><svg class="host__icon" aria-hidden="true"><use href="#i-printer"/></svg><span class="host__name"><span lang="fr">Imprimante</span><span lang="en">Printer</span></span><span class="host__led"></span></span><canvas aria-hidden="true"></canvas></button>
-        </div>
-        <p class="hint" hidden><span lang="fr">Indice : une machine piratée garde le contact avec son attaquant. Et un programme est bien plus régulier qu'un humain.</span><span lang="en">Hint: a compromised machine keeps in touch with its attacker. And a program is far more regular than a human.</span></p>
-        <div class="game__foot">
-          <button class="linkish" type="button" data-hint><span lang="fr">Un indice ?</span><span lang="en">Need a hint?</span></button>
-          <button class="linkish" type="button" data-reveal hidden><span lang="fr">Voir la réponse</span><span lang="en">Show me</span></button>
-          <a class="go" href="projet-detection.html"><span lang="fr">Le projet derrière ce défi</span><span lang="en">The project behind this</span></a>
-        </div>
-        <div class="game__result" aria-live="polite" aria-hidden="true">
-          <p class="game__score"><svg aria-hidden="true"><use href="#i-check"/></svg><span data-result-score></span></p>
-          <h3 data-result-title></h3>
-          <p data-result-text></p>
-          <div class="cta-row">
-            <a class="btn btn--accent" href="projet-detection.html"><span lang="fr">Voir comment je le détecte</span><span lang="en">See how I detect it</span> →</a>
-            <button class="btn" type="button" data-replay><span lang="fr">Rejouer</span><span lang="en">Play again</span></button>
-          </div>
-        </div>
+      <section class="t-projects" data-label-fr="Projets" data-label-en="Projects" aria-label="Projets">
+        <div class="projects-grid" data-cv="project-tiles"></div>
       </section>
 
       <a class="tile t-xray" href="parcours.html">
@@ -190,64 +169,53 @@
         <span class="play" aria-hidden="true"><svg><use href="#i-play"/></svg></span>
       </button>
 
-      <a class="tile t-q1" href="projet-formation.html">
-        <span class="label"><span lang="fr">Projet · organisme de formation</span><span lang="en">Project · training provider</span></span>
-        <p class="question"><span lang="fr">Comment ouvrir un logiciel à Internet sans ouvrir un seul port ?</span><span lang="en">How do you put an app on the Internet without opening a single port?</span></p>
-        <div class="tile__foot"><span class="go"><span lang="fr">La réponse</span><span lang="en">The answer</span></span></div>
-      </a>
-
-      <a class="tile t-q2" href="projet-cabinet.html">
-        <span class="label"><span lang="fr">Projet · cabinet comptable</span><span lang="en">Project · accounting firm</span></span>
-        <p class="question"><span lang="fr">Comment garantir qu'un client ne verra <em>jamais</em> les dossiers d'un autre ?</span><span lang="en">How do you make sure a client will <em>never</em> see another client's files?</span></p>
-        <div class="tile__foot"><span class="go"><span lang="fr">La réponse</span><span lang="en">The answer</span></span></div>
-      </a>
-
       <a class="tile t-skills" href="competences.html">
         <span class="label"><span lang="fr">Compétences</span><span lang="en">Skills</span></span>
         <h2><span lang="fr">Où je suis le plus solide, sans gonfler</span><span lang="en">Where I'm strongest, no inflation</span></h2>
-        <div class="meters">
-          <div class="meter meter--top">
-            <span class="meter__name"><span><span lang="fr">Réseau &amp; infra</span><span lang="en">Networks &amp; infra</span></span><span><span lang="fr">Point fort</span><span lang="en">Strength</span></span></span>
-            <span class="meter__bar" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span>
-          </div>
-          <div class="meter">
-            <span class="meter__name"><span><span lang="fr">Systèmes</span><span lang="en">Systems</span></span><span><span lang="fr">Solide</span><span lang="en">Solid</span></span></span>
-            <span class="meter__bar" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i></span>
-          </div>
-          <div class="meter">
-            <span class="meter__name"><span><span lang="fr">Gouvernance</span><span lang="en">Governance</span></span><span><span lang="fr">Solide</span><span lang="en">Solid</span></span></span>
-            <span class="meter__bar" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i></span>
-          </div>
-          <div class="meter">
-            <span class="meter__name"><span><span lang="fr">Sécurité défensive</span><span lang="en">Defensive security</span></span><span><span lang="fr">En progression</span><span lang="en">Growing</span></span></span>
-            <span class="meter__bar" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i></span>
-          </div>
-          <div class="meter">
-            <span class="meter__name"><span><span lang="fr">Développement</span><span lang="en">Development</span></span><span><span lang="fr">Un outil</span><span lang="en">A tool</span></span></span>
-            <span class="meter__bar" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i></span>
-          </div>
-          <div class="meter">
-            <span class="meter__name"><span><span lang="fr">Sécurité offensive</span><span lang="en">Offensive security</span></span><span><span lang="fr">Notions</span><span lang="en">Basics</span></span></span>
-            <span class="meter__bar" aria-hidden="true"><i class="on"></i><i class="on"></i><i></i><i></i><i></i></span>
-          </div>
-        </div>
+        <div class="meters" data-cv="meters"></div>
         <div class="tile__foot"><span class="go"><span lang="fr">Le détail, module par module</span><span lang="en">Full breakdown, module by module</span></span></div>
       </a>
+
+      <section class="tile t-game" id="game" aria-labelledby="game-title">
+        <span class="label"><span lang="fr">Mini-défi · 30 secondes</span><span lang="en">Quick challenge · 30 seconds</span></span>
+        <h2 class="game__title" id="game-title"><span lang="fr">Une de ces machines est piratée. Laquelle ?</span><span lang="en">One of these machines is compromised. Which one?</span></h2>
+        <p class="game__sub"><span lang="fr">Chaque graphe montre ses connexions vers Internet. Cliquez sur la machine suspecte.</span><span lang="en">Each chart shows its connections to the Internet. Click the suspicious machine.</span></p>
+        <div class="game__grid">
+          <button class="host" type="button"><span class="host__badge"></span><span class="host__top"><svg class="host__icon" aria-hidden="true"><use href="#i-laptop"/></svg><span class="host__name"><span lang="fr">Compta</span><span lang="en">Accounting</span></span><span class="host__led"></span></span><canvas aria-hidden="true"></canvas></button>
+          <button class="host" type="button"><span class="host__badge"></span><span class="host__top"><svg class="host__icon" aria-hidden="true"><use href="#i-laptop"/></svg><span class="host__name"><span lang="fr">RH</span><span lang="en">HR</span></span><span class="host__led"></span></span><canvas aria-hidden="true"></canvas></button>
+          <button class="host" type="button"><span class="host__badge"></span><span class="host__top"><svg class="host__icon" aria-hidden="true"><use href="#i-laptop"/></svg><span class="host__name"><span lang="fr">Accueil</span><span lang="en">Front desk</span></span><span class="host__led"></span></span><canvas aria-hidden="true"></canvas></button>
+          <button class="host" type="button"><span class="host__badge"></span><span class="host__top"><svg class="host__icon" aria-hidden="true"><use href="#i-laptop"/></svg><span class="host__name"><span lang="fr">Direction</span><span lang="en">Management</span></span><span class="host__led"></span></span><canvas aria-hidden="true"></canvas></button>
+          <button class="host" type="button"><span class="host__badge"></span><span class="host__top"><svg class="host__icon" aria-hidden="true"><use href="#i-laptop"/></svg><span class="host__name"><span lang="fr">Commercial</span><span lang="en">Sales</span></span><span class="host__led"></span></span><canvas aria-hidden="true"></canvas></button>
+          <button class="host" type="button"><span class="host__badge"></span><span class="host__top"><svg class="host__icon" aria-hidden="true"><use href="#i-printer"/></svg><span class="host__name"><span lang="fr">Imprimante</span><span lang="en">Printer</span></span><span class="host__led"></span></span><canvas aria-hidden="true"></canvas></button>
+        </div>
+        <p class="hint" hidden><span lang="fr">Indice : une machine piratée garde le contact avec son attaquant. Et un programme est bien plus régulier qu'un humain.</span><span lang="en">Hint: a compromised machine keeps in touch with its attacker. And a program is far more regular than a human.</span></p>
+        <div class="game__foot">
+          <button class="linkish" type="button" data-hint><span lang="fr">Un indice ?</span><span lang="en">Need a hint?</span></button>
+          <button class="linkish" type="button" data-reveal hidden><span lang="fr">Voir la réponse</span><span lang="en">Show me</span></button>
+          <a class="go" href="projet-detection.html"><span lang="fr">Le projet derrière ce défi</span><span lang="en">The project behind this</span></a>
+        </div>
+        <div class="game__result" aria-live="polite" aria-hidden="true">
+          <p class="game__score"><svg aria-hidden="true"><use href="#i-check"/></svg><span data-result-score></span></p>
+          <h3 data-result-title></h3>
+          <p data-result-text></p>
+          <div class="cta-row">
+            <a class="btn btn--accent" href="projet-detection.html"><span lang="fr">Voir comment je le détecte</span><span lang="en">See how I detect it</span> →</a>
+            <button class="btn" type="button" data-replay><span lang="fr">Rejouer</span><span lang="en">Play again</span></button>
+          </div>
+        </div>
+      </section>
 
       <div class="tile t-web">
         <span class="label">Freelance</span>
         <h2><span lang="fr">2 sites clients en ligne</span><span lang="en">2 client websites live</span></h2>
         <p><span lang="fr">De la maquette à la mise en ligne.</span><span lang="en">From mock-up to launch.</span></p>
-        <div class="sites">
-          <a href="https://ferovagroupe.fr" target="_blank" rel="noopener noreferrer">ferovagroupe.fr <span aria-hidden="true">↗</span></a>
-          <a href="https://nflconciergerie.fr" target="_blank" rel="noopener noreferrer">nflconciergerie.fr <span aria-hidden="true">↗</span></a>
-        </div>
+        <div class="sites" data-cv="sites"></div>
       </div>
 
       <section class="tile t-contact" id="contact" aria-labelledby="contact-title">
         <span class="label">Contact</span>
         <h2 id="contact-title"><span lang="fr">On en parle ?</span><span lang="en">Let's talk.</span></h2>
-        <p><span lang="fr">Je cherche un premier poste en cybersécurité pour septembre 2027 : SOC, sécurité des infrastructures, détection. Un échange avant, c'est avec plaisir aussi.</span><span lang="en">I'm looking for a first cybersecurity role from September 2027: SOC, infrastructure security, detection. Happy to talk before then too.</span></p>
+        <p><span data-cv="seeking-sentence"></span> <span lang="fr">Un échange avant, c'est avec plaisir aussi.</span><span lang="en">Happy to talk before then too.</span></p>
         <div class="cta-row">
           <button class="btn btn--accent" type="button" data-copy="samet.bucak60@gmail.com"><span lang="fr">Copier mon e-mail</span><span lang="en">Copy my email</span></button>
           <a class="btn" href="mailto:samet.bucak60@gmail.com"><span lang="fr">Écrire</span><span lang="en">Email me</span></a>
@@ -268,6 +236,8 @@
     <p>© <span id="year">2026</span> Samet Bucak</p>
     <p><span lang="fr">Aucun cookie, aucun traceur. Ouvrez la console du navigateur : un message vous y attend.</span><span lang="en">No cookies, no trackers. Open your browser console: there's a note for you.</span></p>
   </footer>
+  <script src="js/data.js"></script>
+  <script src="js/render.js"></script>
   <!-- ZmxhZ3tsYV9jdXJpb3NpdGVfcGFpZV90b3Vqb3Vyc30= -->
 </body>
 </html>

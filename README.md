@@ -2,50 +2,45 @@
 
 Mon CV en ligne : https://sametdu60.github.io
 
-Élève ingénieur en cybersécurité à l'ESIEA, diplômé en septembre 2027. Je viens du réseau, je vais vers la détection.
+Élève ingénieur en cybersécurité à l'ESIEA, diplômé en septembre 2027. Je cherche un premier poste en CDI à Paris : SOC, sécurité des infrastructures et du cloud, détection de menaces.
 
-## Cinq interfaces, un seul contenu
+## Trois points d'entrée
 
-Le site existe en cinq versions, le temps de recueillir l'avis de recruteurs :
+| Page | Rôle |
+|---|---|
+| `index.html` | Le CV en ligne : qui je suis, ce que je cherche, mes projets, un mini-défi de détection |
+| `cv.html` | Le CV classique, une page A4 affichée dans le navigateur et imprimable |
+| `portfolio.html` | La reconversion en six chapitres, puis les projets en détail |
 
-| Version | Page | Parti pris |
-|---|---|---|
-| 1 · Ludique | `index.html` | Tuiles, mini-défi de détection, valise aux rayons X |
-| 2 · Classique | `v2.html` | CV typographié comme un document, imprimable |
-| 3 · Console SOC | `v3.html` | Tableau de bord d'analyste, lab en direct |
-| 4 · Récit | `v4.html` | La reconversion en six chapitres plein écran |
-| 5 · Fiche express | `v5.html` | Tout le profil sur un écran, grille suisse |
+Pages communes : `parcours.html`, `competences.html` et les études de cas `projet-*.html`. Elles reprennent l'habillage de la page d'où l'on vient.
 
-Un sélecteur en bas de page permet de passer de l'une à l'autre, et un formulaire prépare un e-mail de retour structuré. Rien n'est stocké en dehors du navigateur du visiteur.
+## Une seule source pour le contenu
 
-Pour envoyer directement une version : `https://sametdu60.github.io/?ui=3`.
+`js/data.js` contient le profil, ce que je cherche, les expériences, les projets, la formation et les compétences. `js/render.js` s'en sert pour construire le haut de l'accueil, les tuiles projets, le CV classique, les projets du portfolio et les liens « projet suivant ».
 
-Les pages de détail (`parcours.html`, `competences.html`, `projet-*.html`) sont communes et prennent l'habillage de la version choisie.
+- Retirer un projet partout : passer son `show` à `false`.
+- Ajouter un projet : copier un bloc existant dans `projects` (l'ordre de la liste est l'ordre d'affichage).
+- Un projet sans `question` n'a pas de tuile sur l'accueil, mais apparaît dans le CV classique.
 
-Une fois la version définitive choisie : dans `js/boot.js`, passer `REVIEW` à `false` et mettre son numéro dans `DEFAULT_UI`.
+Le CV classique tient sur une page A4 avec le contenu actuel. Au-delà, l'impression passe sur deux pages.
 
 ## Les scripts
 
-- `js/boot.js` : langue, thème et interface appliqués avant l'affichage
+- `js/boot.js` : langue, thème et habillage appliqués avant l'affichage
+- `js/data.js`, `js/render.js` : le contenu et sa mise en page
 - `js/site.js` : bascules, apparitions, copie de l'e-mail, vidéo, impression
-- `js/review.js` : sélecteur d'interface et formulaire de retour
-- `js/game.js` : le défi « trouvez la machine piratée » (version 1)
-- `js/xray.js` : la valise passée aux rayons X (versions 1 et 4)
-- `js/net.js` : la simulation du lab (page détection et version 3)
-- `js/console.js`, `js/story.js` : horloge de la version 3, chapitres de la version 4
+- `js/game.js` : le défi « trouvez la machine piratée »
+- `js/xray.js` : la valise passée aux rayons X
+- `js/net.js` : la simulation du lab sur la page détection
+- `js/story.js` : la navigation par chapitres du portfolio
 
 ## Choix techniques
 
-Site statique en HTML, CSS et JavaScript, sans framework ni dépendance. Chaque page existe en français et en anglais, le contenu des deux langues est dans le HTML.
+Site statique en HTML, CSS et JavaScript, sans framework ni dépendance. Chaque page existe en français et en anglais.
 
 Aucune ressource externe : pas de police Google, pas de CDN, pas de traceur, pas de cookie. La politique CSP de chaque page n'autorise que le domaine du site.
 
-Les animations se mettent en pause hors de l'écran, et laissent place à une image fixe pour les visiteurs qui ont réduit les animations dans leur système.
-
-## Médias
-
-- Photo : `assets/photos/img-profil.jpg`
-- Vidéo : `assets/video/video.mp4` (pour la masquer, ajouter la classe `is-soon` à l'élément `#video-tile` de la version 1)
+Les anciennes adresses `v2.html` à `v5.html` redirigent vers la page correspondante.
 
 ## En local
 

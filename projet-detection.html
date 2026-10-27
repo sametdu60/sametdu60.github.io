@@ -13,7 +13,6 @@
   <script src="js/boot.js"></script>
   <script src="js/net.js" defer></script>
   <script src="js/site.js" defer></script>
-  <script src="js/review.js" defer></script>
 </head>
 <body>
   <a class="skip" href="#contenu"><span lang="fr">Aller au contenu</span><span lang="en">Skip to content</span></a>
@@ -27,6 +26,8 @@
       <nav class="menu" aria-label="Navigation">
         <a href="parcours.html"><span lang="fr">Parcours</span><span lang="en">Background</span></a>
         <a href="competences.html"><span lang="fr">Compétences</span><span lang="en">Skills</span></a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="cv.html"><span lang="fr">CV classique</span><span lang="en">Classic CV</span></a>
         <a href="index.html#contact">Contact</a>
       </nav>
       <div class="toggles">
@@ -123,14 +124,14 @@
       </ol>
     </section>
 
-    <section class="block reveal">
+    <section class="block reveal" id="psyber">
       <span class="label"><span lang="fr">Avant ce projet</span><span lang="en">Before this project</span></span>
       <h2>PsyberSentinel</h2>
       <p><span lang="fr">Un projet d'école qui a posé les bases : la conception d'une plateforme XDR d'analyse comportementale, centrée sur les menaces internes et les techniques Living-off-the-Land. Ingestion PCAP et NetFlow, inspection des paquets, logs normalisés au format OCSF, détection non supervisée exécutée en local et alertes expliquées par SHAP.</span><span lang="en">A school project that laid the groundwork: designing a behavioural XDR platform focused on insider threats and Living-off-the-Land techniques. PCAP and NetFlow ingestion, packet inspection, logs normalised to OCSF, unsupervised detection running locally and alerts explained with SHAP.</span></p>
       <ul class="tags"><li>PCAP / NetFlow</li><li>DPI</li><li>OCSF</li><li>Isolation Forest</li><li>Autoencoders</li><li>SHAP</li></ul>
     </section>
 
-    <a class="next" href="projet-formation.html">
+    <a class="next" data-next="detection" href="projet-formation.html">
       <span><span class="label"><span lang="fr">Projet suivant</span><span lang="en">Next project</span></span><strong><span lang="fr">Ouvrir un logiciel à Internet sans ouvrir un seul port</span><span lang="en">Putting an app online without opening a single port</span></strong></span>
       <span class="next__arrow" aria-hidden="true">→</span>
     </a>
@@ -144,5 +145,7 @@
     <p>© <span id="year">2026</span> Samet Bucak</p>
     <p><a href="index.html"><span lang="fr">Retour à l'accueil</span><span lang="en">Back to home</span></a></p>
   </footer>
+  <script src="js/data.js"></script>
+  <script src="js/render.js"></script>
 </body>
 </html>
