@@ -21,6 +21,7 @@ Pages communes : `parcours.html`, `competences.html` et les études de cas `proj
 - Retirer un projet partout : passer son `show` à `false`.
 - Ajouter un projet : copier un bloc existant dans `projects` (l'ordre de la liste est l'ordre d'affichage).
 - Un projet sans `question` n'a pas de tuile sur l'accueil, mais apparaît dans le CV classique.
+- Formation complémentaire : la liste `labels`, avec l'organisme et les partenaires. Leurs logos sont dans `assets/logos/`.
 
 Le CV classique tient sur une page A4 avec le contenu actuel. Au-delà, l'impression passe sur deux pages.
 

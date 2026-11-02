@@ -52,6 +52,25 @@
       `<span class="tile__foot"><span class="chip-status">${tr(p.status)}</span><span class="go">${both("La réponse", "The answer")}</span></span>` +
     `</a>`).join(""));
 
+  /* Labels : accueil et parcours ---------------------------------------- */
+  const labels = (cv.labels || []).filter(l => l.show);
+  const logo = o => `<span class="logo-chip"><img src="${o.logo}" height="34" alt="${o.name}"></span>`;
+  const provider = l => both("Organisme : ", "Provider: ") + l.org.name;
+  const partners = l => both("Partenaires : ", "Partners: ") + l.partners.map(p => p.name).join(both(" et ", " and "));
+  if (!labels.length) document.querySelectorAll("[data-labels]").forEach(el => el.remove());
+  fill("label-list", labels.map(l =>
+    `<div class="label-item">` +
+      `<div class="label-item__head"><h2>${tr(l.title)}</h2><span class="chip-status">${tr(l.status)}</span></div>` +
+      `<p>${tr(l.summary)}</p>` +
+      `<div class="label-logos">` +
+        `<div class="label-logos__group"><span class="label-logos__key">${both("Organisme", "Provider")}</span><div class="label-logos__row">${logo(l.org)}</div></div>` +
+        `<div class="label-logos__group"><span class="label-logos__key">${both("Partenaires", "Partners")}</span><div class="label-logos__row">${l.partners.map(logo).join("")}</div></div>` +
+      `</div>` +
+    `</div>`).join(""));
+  fill("certificates", tr(cv.certificates));
+  fill("labels-line", labels.map(l =>
+    `<strong>${tr(l.title)}</strong> · ${tr(l.status)} · ${provider(l)} · ${partners(l)}`).join("<br>"));
+
   /* Portfolio ----------------------------------------------------------- */
   fill("portfolio-projects", shown.filter(p => p.link).map(p =>
     `<a class="card4 card4--${p.tone}" href="${p.link}">` +
@@ -151,8 +170,9 @@
             <p>${tr(cv.languages)}</p>
           </section>
           <section>
-            <h2>${both("Certificats", "Certificates")}</h2>
+            <h2>${both("Certificats et labels", "Certificates and labels")}</h2>
             <p>${tr(cv.certificates)}</p>
+            ${labels.map(l => `<p class="doc__label"><strong>${tr(l.title)}</strong> · ${tr(l.status)}. ${provider(l)}. ${partners(l)}.</p>`).join("")}
           </section>
         </aside>
       </div>

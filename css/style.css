@@ -188,6 +188,7 @@ a:hover .go::after, .go:hover::after { transform: translateX(4px); }
     "projects projects projects web"
     "xray     xray     years    video"
     "skills   skills   game     game"
+    "label    label    game     game"
     "contact  contact  contact  contact";
 }
 .tile {
@@ -207,6 +208,7 @@ a.tile:hover, .tile--hover:hover { transform: translateY(-4px); box-shadow: var(
 .t-years { grid-area: years; }
 .t-video { grid-area: video; }
 .t-projects { grid-area: projects; }
+.t-label { grid-area: label; }
 .t-skills { grid-area: skills; }
 .t-web { grid-area: web; }
 .t-contact { grid-area: contact; }
@@ -608,6 +610,7 @@ a.card .go { margin-top: 12px; color: var(--text); font-size: 14.5px; }
       "xray xray"
       "years video"
       "skills skills"
+      "label label"
       "game game"
       "web contact";
   }
@@ -625,7 +628,7 @@ a.card .go { margin-top: 12px; color: var(--text); font-size: 14.5px; }
   .home, .page { padding-left: 16px; padding-right: 16px; }
   .bento {
     grid-template-columns: minmax(0, 1fr);
-    grid-template-areas: "intro" "projects" "xray" "years" "video" "skills" "game" "web" "contact";
+    grid-template-areas: "intro" "projects" "xray" "years" "video" "skills" "label" "game" "web" "contact";
     gap: 12px;
   }
   .tile, .t-intro, .t-contact { padding: 22px; border-radius: 20px; }
@@ -715,6 +718,17 @@ html[data-ui="2"] :is(h1, h2, h3, .question, .tagline, .quote, .next strong) { f
 }
 .seek__meta dt { font-size: 11.5px; font-weight: 650; letter-spacing: .08em; text-transform: uppercase; color: var(--on-contrast-muted); }
 .seek__meta dd { font-weight: 700; font-size: 16px; margin-top: 2px; }
+
+/* Formation complémentaire, construite depuis js/data.js */
+.label-item__head { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; }
+.label-item__head h2 { font-size: 22px; letter-spacing: -.02em; }
+.label-item p { color: var(--muted); font-size: 15px; margin-top: 8px; }
+.label-logos { display: flex; flex-wrap: wrap; gap: 14px 28px; margin-top: 16px; }
+.label-logos__group { display: grid; gap: 7px; }
+.label-logos__key { font-size: 12px; font-weight: 650; letter-spacing: .07em; text-transform: uppercase; color: var(--muted); }
+.label-logos__row { display: flex; flex-wrap: wrap; gap: 8px; }
+.logo-chip { display: grid; place-items: center; padding: 8px 14px; border-radius: 12px; background: #ffffff; border: 1px solid var(--line); }
+.logo-chip img { height: 34px; width: auto; max-width: 150px; }
 
 /* Projets, construits depuis js/data.js */
 .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 14px; height: 100%; }

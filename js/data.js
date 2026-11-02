@@ -185,5 +185,23 @@ window.CV = {
   certificates: {
     fr: "MOOC Objectif IPv6 (IMT), orchestration de conteneurs avec Kubernetes, Tosa DigComp",
     en: "IPv6 MOOC (IMT), container orchestration with Kubernetes, Tosa DigComp"
-  }
+  },
+
+  // Une fois le parcours terminé, remplacer `status` par { fr: "Obtenu", en: "Completed" }.
+  labels: [
+    {
+      show: true,
+      title: { fr: "Label Handimanagement", en: "Handimanagement label" },
+      org: { name: "Companieros", logo: "assets/logos/companieros.svg" },
+      partners: [
+        { name: "Groupe SII", logo: "assets/logos/sii.png" },
+        { name: "Squad", logo: "assets/logos/squad.svg" }
+      ],
+      status: { fr: "En cours", en: "In progress" },
+      summary: {
+        fr: "Manager des personnes en situation de handicap : MOOC de 7 h.",
+        en: "Managing people with disabilities: a 7-hour MOOC."
+      }
+    }
+  ]
 };
